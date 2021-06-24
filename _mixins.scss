@@ -1,0 +1,6 @@
+@mixin flexCenter($direction : row) { // mixin, similar to functions in JS. Receives arguments. Default for $direction is row as sepcified
+    display: flex;
+    flex-direction: $direction; // use variable passed as argument in mixin declaration
+    justify-content: center;
+    align-items: center;
+}

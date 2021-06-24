@@ -1,0 +1,26 @@
+// importing other scss files, written without underscore(_) and file extension
+@import 'variables';
+@import 'mixins';
+
+header{
+    @include flexCenter(column); // include mixin flexCenter and pass argument to it
+
+    background-color: cornflowerblue;
+    color: $textColor; // variables imported from _variables above
+    height: 100vh;
+    margin: 0 (100% - 70%) / 2; // calculation in sass/scss
+
+    button{ // nested. compiled as -> header button
+        background-color: $primaryColor;
+        &:hover { // compiled as -> header button:hover
+            background-color: $primaryColorHover;
+        }
+    }
+}
+
+.contact{
+    @extend header; // inherit styles from header
+
+    background-color: coral; // overrides style in header
+    color: $textColorBlack;
+}
